@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
     // Consts
-    const float MAX_SPEED = 100;
+    const float MAX_SPEED = 10;
     const float COROUTINE_INTERVAL = 1f;
 
     // Unity vars
@@ -22,7 +22,8 @@ public class Player : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        Vector2 moveDirection = new Vector2(Input.GetAxisRaw("PlayerHorizontal"), Input.GetAxisRaw("PlayerVertical")).normalized;
+        //Vector2 moveDirection = new Vector2(Input.GetAxisRaw("PlayerVertical"), Input.GetAxisRaw("PlayerHorizontal")).normalized;
+        Vector3 moveDirection = new Vector3(Input.GetAxisRaw("PlayerVertical"), Input.GetAxisRaw("PlayerJump"), -Input.GetAxisRaw("PlayerHorizontal")).normalized;
         body.AddForce(moveDirection * GetSpeed());
     }
 

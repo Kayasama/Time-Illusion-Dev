@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraHelper : MonoBehaviour {
-    [SerializeField] Camera camera;
+    [SerializeField] Transform cameraTransform;
     [SerializeField] Transform target;
 
     Vector3 velocity = Vector3.zero;
@@ -20,9 +20,8 @@ public class CameraHelper : MonoBehaviour {
     void FixedUpdate() {
         //Vector3 position = target.position / 2;
         Vector3 position = target.position;
-        position.z = -10;
-        camera.transform.position = Vector3.SmoothDamp(camera.transform.position, position, ref velocity, 0.15f) + shakeVector;
-        //camera.transform.position = position;
+        position.z -= 10;
+        cameraTransform.position = Vector3.SmoothDamp(cameraTransform.transform.position, position, ref velocity, 0.15f) + shakeVector;
     }
 
     IEnumerator ShakeRoutine(float duration, float strength) {
