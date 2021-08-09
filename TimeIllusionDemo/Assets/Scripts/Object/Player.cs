@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
     [SerializeField] Rigidbody body;
 
     void Start() {
-        StartCoroutine(SomeRoutine());
+        //StartCoroutine(SomeRoutine());
     }
 
     void Update() {
