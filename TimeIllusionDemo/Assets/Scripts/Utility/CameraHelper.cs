@@ -21,7 +21,7 @@ public class CameraHelper : MonoBehaviour {
         //Vector3 position = target.position / 2;
         Vector3 position = target.position;
         position.z -= 10;
-        cameraTransform.position = Vector3.SmoothDamp(cameraTransform.transform.position, position, ref velocity, 0.15f) + shakeVector;
+        cameraTransform.position = Vector3.SmoothDamp(cameraTransform.position, position, ref velocity, 0.15f) + shakeVector;
     }
 
     IEnumerator ShakeRoutine(float duration, float strength) {
