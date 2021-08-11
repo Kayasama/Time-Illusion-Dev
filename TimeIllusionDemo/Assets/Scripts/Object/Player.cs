@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
     void FixedUpdate() {
         //Vector2 moveDirection = new Vector2(Input.GetAxisRaw("PlayerVertical"), Input.GetAxisRaw("PlayerHorizontal")).normalized;
         Vector3 moveDirection = new Vector3(Input.GetAxisRaw("PlayerVertical"),
-                                            Input.GetKey(KeyCode.X) ? -1 : 1,
+                                            Input.GetKey(KeyCode.X) ? -1 : 0,
                                             -Input.GetAxisRaw("PlayerHorizontal")).normalized;
         body.AddForce(moveDirection * GetSpeed());
     }
