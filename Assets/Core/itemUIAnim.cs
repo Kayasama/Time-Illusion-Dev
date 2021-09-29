@@ -17,11 +17,7 @@ public class itemUIAnim : MonoBehaviour
         self.CrossFadeAlpha(0, 0f, true);
     }
 
-    private void okkk()
-    {
-        animStop = true;
-    }
-
+    
     private void Update()
     {
         if(panelAnimator.GetBool("open") && !isOpen)

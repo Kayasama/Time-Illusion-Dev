@@ -1174,6 +1174,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323144625}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &328933181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3216618935591221753, guid: 1a8b0b2dc6e99214694b44da13785386,
+    type: 3}
+  m_PrefabInstance: {fileID: 3216618935041190298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &328933187
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328933181}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &429775571
 GameObject:
   m_ObjectHideFlags: 0
@@ -5561,7 +5579,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6196df60a0f3e04fba768cc1d4a3158, type: 3}
+  m_Script: {fileID: 11500000, guid: c45e3d88c5f457441ba436e6725c8bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1900221380

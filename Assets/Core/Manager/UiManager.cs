@@ -1,67 +1,36 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-/// <summary>
-/// 管理游戏所有UI
-/// </summary>
-/// 
-
-public enum UIFormShowMode
-{
-    Normal,  // 普通模式
-    ReverseChange,  // 反向切换
-    HideOther   // 隐藏其他界面
-}
 
 public class UiManager : MonoBehaviour
 {
-    // 管理实例
-    private static UiManager _instance = null;
-    private Dictionary<string, string> _DicUIFormsPaths;
-    private Dictionary<string, BaseUiForm> _DicALLUIForms;
-    private Stack<BaseUiForm> _currentUiForm;
-    
-    public Animator ani;
-    
-
     #region 控制Ui改变
     public Slider longTouchSlider;
     public List<Image> itemUiGroup;
     public Text requestText;
+    public Animator ani;
 
     private void Start()
     {
         // 物品UI容器
         itemUiGroup = new List<Image>(3);
-        
+
     }
 
-    //public static UiManager GetInstance()
-    //{
-    //    if (_instance == null)
-    //        _instance = new GameObject("UiManager").AddComponent<UiManager>();
-    //    return _instance;
-    //}
 
 
-    //public void ShowUiForm(string strUiForm)
-    //{
-    //    //BaseUiForm baseUiForm;
-
-    //    if (string.IsNullOrEmpty(strUiForm)) return;
-    //}
-
-    // 改变Ui
+    // 改变物品栏Ui
     public void ChangeImage()
     {
-
+        // TODO
     }
+
 
     // 修改物品栏视图
     public void ModifyView()
     {
-
+        // TODO
     }
 
     // 要求玩家拿出令牌的信息

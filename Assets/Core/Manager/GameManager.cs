@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
         InitSoundManager();
         SoundManager.Instance.Init();
         SoundManager.Instance.PlayBgAudio(sources[0].clip.name);
+        UIManager.Instance.PushPanel(UIPanelType.MainMenu);
     }
 
     // 游戏主循环

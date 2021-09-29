@@ -1,0 +1,13 @@
+{
+    "InfoList": [
+        {
+            "panelTypeString": "MainMenu",
+            "path": "UIPanel/MainMenuPanel"
+        }
+
+        //{
+        //    "panelTypeString": "Knapsack",
+        //    "path": "UIPanel/KnapsackPanel"
+        //}
+    ]
+}

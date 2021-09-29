@@ -505,6 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 3216618936115655322}
+  text: {fileID: 0}
 --- !u!1 &3216618935652359729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,13 +1063,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3216618936578341242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6196df60a0f3e04fba768cc1d4a3158, type: 3}
+  m_Script: {fileID: 11500000, guid: c45e3d88c5f457441ba436e6725c8bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ani: {fileID: 3216618935652359735}
   longTouchSlider: {fileID: 3216618935108450716}
   itemUiGroup: []
   requestText: {fileID: 3216618936465132815}
+  ani: {fileID: 3216618935652359735}
 --- !u!1 &3216618936613727646
 GameObject:
   m_ObjectHideFlags: 0
