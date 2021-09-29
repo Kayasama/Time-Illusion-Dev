@@ -28,9 +28,7 @@ public class GameManager : MonoBehaviour
     public SceneManager sceneManager;
     public CameraManager camManager;
     public UiManager uiManager;
-    //public AudioClip clip;
     private AudioSource source;
-    //public StateMachineBehaviour eventTrigger;
 
    
     private void Start()
@@ -150,6 +148,7 @@ public class GameManager : MonoBehaviour
     {
         for(int i = 0; i < basket.itemsInBasket.Count; ++i)
         {
+            // 在给予这个判断前，想到的是用字典
             if (basket.itemsInBasket[i].transform.name == "Token" && i + 1 == ItemBasket.itemInHand)
             {
                 if (Input.GetKey(KeyCode.Space))

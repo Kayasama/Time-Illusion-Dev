@@ -20,8 +20,8 @@ public class UiManager : MonoBehaviour
     private static UiManager _instance = null;
     private Dictionary<string, string> _DicUIFormsPaths;
     private Dictionary<string, BaseUiForm> _DicALLUIForms;
-
     private Stack<BaseUiForm> _currentUiForm;
+    [Header("HealthSettings")]
     public Animator ani;
     
 
