@@ -15,10 +15,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float CheckRadius;
     
     [Header("角色位移属性")]
-    [SerializeField]private float speed;
-    [SerializeField] private float verticalSpeed = 0;
-    [SerializeField] private float jumpSpeed = 2f;
-    [SerializeField] private float gravity = 5f;
+    [Tooltip("角色速度")][SerializeField]private float speed;
+    [Tooltip("当前竖直速度")] [SerializeField] private float verticalSpeed = 0;
+    [Tooltip("上升速度")] [SerializeField] private float jumpSpeed = 2f;
+    [Tooltip("重力")] [SerializeField] private float gravity = 5f;
 
     private Vector3 moveDirection;
 
@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour
     // 人物检测
     public void checkItemInScene()
     {
-        RaycastHit hit;
         string[] layerName = { "Item", "Door", "Doc" };
 
         //Physics.SphereCast(this.transform.position, CheckRadius, transform.forward, out hit, 0.1f, ~LayerMask.GetMask("Terrain"))

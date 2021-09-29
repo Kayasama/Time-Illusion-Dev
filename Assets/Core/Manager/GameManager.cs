@@ -16,27 +16,43 @@ public enum NearState
 public class GameManager : MonoBehaviour
 {
     
-    // 场景物品
+    /// <summary>
+    /// 场景物品
+    /// </summary>
     public List<ItemBaseForm> Items = new List<ItemBaseForm>(0);
+
+    /// <summary>
+    /// 玩家
+    /// </summary>
     public Transform Player;
     public static NearState curNearState = NearState.nothing;
+    private PlayerController controller;
     
-    // 物品栏物品
+    /// <summary>
+    /// 物品栏物品
+    /// </summary>
     public ItemBasket basket;
 
-    private PlayerController controller;
+    /// <summary>
+    /// Ui、音乐、相机、场景切换模块
+    /// </summary>
     public SceneManager sceneManager;
     public CameraManager camManager;
     public UiManager uiManager;
-    private AudioSource source;
+    private AudioSource[] sources;
+    
 
-   
+    #region 生命周期
     private void Start()
     {
-        source = GetComponent<AudioSource>();
+        // 初始化角色控制
         controller = Player.GetComponent<PlayerController>();
+
+        sources = GetComponents<AudioSource>();
+
+        // 初始化获取场景所有物品
         Transform[] allItemChild = GetComponentsInChildren<Transform>(true);
-        //print(allItemChild[0]);
+        
         for (int i = 0; i <= allItemChild.Length - 1; ++i)
         {
             if (Items.Count < allItemChild.Length - 1)
@@ -45,18 +61,27 @@ public class GameManager : MonoBehaviour
             if (allItemChild[i] != this.gameObject.transform)
                 Items[--i].transform = allItemChild[++i];
         }
-        // 跳过2_Doc
-        Debug.Log(Items[4].transform.name);
+
+        // 初始化音乐管理
+        InitSoundManager();
+        SoundManager.Instance.Init();
+        SoundManager.Instance.PlayBgAudio(sources[0].clip.name);
     }
 
+    // 游戏主循环
+    public void FixedUpdate()
+    {
+        FunctionalPos(curNearState);
+    }
+    #endregion 生命周期
 
-    //private void ItemCanTake()
-    //{
-    //    foreach(var i in Items)
-    //    {
-    //        i.NearPlayerCheck(i.transform, Player);
-    //    }
-    //}
+    #region 方法
+    public void InitSoundManager()
+    {
+        SoundManager.Instance.GetAudioSource(sources);
+
+    }
+
 
     public void SetItemsParent(int index)
     {
@@ -220,57 +245,8 @@ public class GameManager : MonoBehaviour
                     break;
         }
     }
+    #endregion 方法
 
-    // 游戏主循环
-    public void FixedUpdate()
-    {
-        #region 残余代码
-        //if (ItemBasket.itemInHand > 0)
-        //{
-        //    basket.ItemBack2Basket();
-
-        //    //    //print(Items.Count);
-        //    //    //物品栏有物品
-        //    if (basket.itemsInBasket.Count != 0)
-        //    {
-        //        Debug.Log("has sth in hand...");
-        //        if (curNearState == NearState.Doc)
-        //        {
-        //            Debug.Log("放东西。");
-        //            uiManager.requestForToken();
-        //            BurnInfo();
-        //            if (curTouchVal == maxTouchVal) Debug.Log("完成");
-        //        }
-
-        //        // 待处理
-        //        else
-        //        setItemPos(ItemBasket.itemInHand);
-        //    }
-
-        //}
-        //else
-        //{
-
-        //    basket.CheckWhichPressed();
-        //    ItemCanTake();
-        //    GetItem();
-        //}
-        //if(curNearState == NearState.door && Input.GetKeyDown(KeyCode.E))
-        //{
-        //    uiManager.ani.SetTrigger("FadeOut");
-        //    Debug.Log("切换中。。");
-        //    StartCoroutine(Timer());
-        //}
-        #endregion
-        //Debug.Log(Items[4].transform.name);
-        source.Play();
-
-
-        Debug.Log(curNearState);
-        FunctionalPos(curNearState);
-
-
-    }
 }
 
 
